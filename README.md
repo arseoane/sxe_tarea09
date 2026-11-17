@@ -172,7 +172,8 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ## 4. Ejercicio 3 · Búsqueda guardada
 
-No hay captura disponible de la búsqueda guardada.
+<img width="675" height="769" alt="image" src="https://github.com/user-attachments/assets/2452128f-5d63-4239-ba42-6e052c4d97ed" />
+
 
 ## 5. Ejercicio 4 · Modo desarrollador
 
