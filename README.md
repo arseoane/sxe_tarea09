@@ -153,20 +153,21 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ### Paso 3 · Productos nuevos
 
-<img width="1920" height="724" alt="image" src="https://github.com/user-attachments/assets/b34754a5-d0a2-4a97-b9ce-ebe5da431480" />
+<img width="1366" height="679" alt="image" src="https://github.com/user-attachments/assets/3f62b1ae-7284-40a2-bf2d-68b9d1ecb6ee" />
 
 
 ### Paso 4 · Presupuesto
 
-No hay captura disponible en el repositorio.
+<img width="849" height="506" alt="image" src="https://github.com/user-attachments/assets/76bc4db6-f9bb-4af6-8422-f688ccb6266f" />
+
 
 ### Paso 5 · Factura
 
-No hay captura disponible en el repositorio.
+<img width="1344" height="530" alt="image" src="https://github.com/user-attachments/assets/297e3b80-2970-49a5-ae25-789d0aab79b1" />
 
 ### Paso 6 · Factura de proveedor
 
-No hay captura disponible en el repositorio.
+<img width="998" height="647" alt="image" src="https://github.com/user-attachments/assets/203c6f71-4a05-4cbb-8f4a-e24a35c9aaef" />
 
 ### Paso 7 · Chatter
 
