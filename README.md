@@ -1,8 +1,7 @@
 # SXE · Tarea 09 — Implantación de Odoo 19 con Docker Compose
 
-Manual de implantación de Odoo 19 Community con PostgreSQL y pgAdmin, y
-recorrido documentado por sus aplicaciones principales (Contactos, Ventas y
-Facturación).
+Manual de implantación de Odoo 19 Community con PostgreSQL y pgAdmin, con las
+evidencias disponibles de la instalación y de los ejercicios.
 
 ---
 
@@ -23,13 +22,15 @@ sxe_tarea09/
 ├── README.md            # Este manual
 ├── .gitignore           # Excluye el .env y copias locales con secretos
 ├── docker-compose.yml   # Pila: PostgreSQL + Odoo 19 + pgAdmin
-├── .env                 # Valores reales de esta instalación (NO se sube)
-├── .env.example         # Plantilla sin contraseñas para quien clone el repo
+├── .env.example         # Valores de ejemplo para quien clone el repo
 ├── config/
 │   └── odoo.conf        # Configuración de Odoo (master password placeholder)
-├── addons/              # Módulos propios (vacía por ahora, para la UD4)
+├── addons/
+│   └── .gitkeep         # Conserva el directorio vacío en Git
 └── screenshots/         # Capturas de los ejercicios
 ```
+
+El fichero local `.env` se crea a partir de `.env.example` y no se versiona.
 
 ## A.3. Puesta en marcha
 
@@ -73,10 +74,6 @@ docker compose down -v       # para los contenedores y borra los datos
   que se recreen los contenedores.
 - Ante cualquier error, lo primero es el log:
   `docker compose logs --tail=100 odoo`.
-- Al arrancar, Odoo puede mostrar el aviso
-  `option addons_path, invalid addons directory '/mnt/extra-addons', skipped`.
-  Es normal mientras la carpeta `addons/` esté vacía; desaparece cuando metas
-  módulos propios.
 
 ## A.4. Nota sobre la master password
 
@@ -87,33 +84,12 @@ descargar cualquier base de datos desde `/web/database/manager`.
 
 ---
 
-# Parte B · Apartados obligatorios
-
-> **Capturas necesarias** (guárdalas en `screenshots/` con estos nombres):
->
-> | Fichero | Qué debe mostrar |
-> |---|---|
-> | `01-gestor-bd.png` | Gestor de bases de datos con `demo` y `primo` |
-> | `02-producto-bien-rastreable.png` | Ficha de un producto **Bienes con Rastrear inventario** |
-> | `03-producto-bien-sin-rastrear.png` | Ficha de un producto **Bienes sin Rastrear inventario** |
-> | `04-producto-servicio.png` | Ficha de un producto **Servicio** |
-> | `05-producto-combinacion.png` | Ficha de un producto **Combinación** |
-> | `06-ej2-paso1-contactos.png` | Contacto de empresa y contacto de persona |
-> | `07-ej2-paso2-nuevo-cliente.png` | Cliente nuevo con CIF, dirección y etiqueta |
-> | `08-ej2-paso3-productos.png` | Productos **Hora de soporte** y **Libro técnico** |
-> | `09-ej2-paso4-presupuesto.png` | Presupuesto enviado y confirmado (pedido de venta) |
-> | `10-ej2-paso5-factura.png` | Factura con el IVA de cada línea y etiqueta **Pagado** |
-> | `11-ej2-paso6-factura-proveedor.png` | Factura de proveedor de demostración |
-> | `12-ej2-paso7-chatter.png` | Chatter con la actividad (llamada) programada |
-> | `13-ej3-facturas-favoritas.png` | Facturas publicadas agrupadas por cliente + favorito |
-> | `14-ej4-debug-ajustes.png` | Activación del modo desarrollador desde Ajustes |
-> | `15-ej4-debug-url.png` | Activación del modo desarrollador con `?debug=1` |
-> | `16-ej4-nombres-tecnicos.png` | Nombres técnicos de campos con el modo desarrollador |
+# Parte B · Evidencias de los ejercicios
 
 ## 1. Bases de datos
 
-Se han creado dos bases de datos desde el gestor de Odoo
-(http://localhost:8069 o `/web/database/manager`):
+La captura disponible del gestor de Odoo muestra las bases de datos `demo` y
+`primo`:
 
 | Base de datos | Datos de demostración | Uso |
 |---|---|---|
@@ -132,100 +108,71 @@ de equivalencia y retenciones de IRPF, en versión de ventas y de compras).
 
 ![Gestor de bases de datos con demo y primo](./screenshots/01-gestor-bd.png)
 
-> Captura necesaria: el gestor de bases de datos mostrando `demo` y `primo`.
-
 ## 2. Ejercicio 1 · Tipos de producto
 
-En `demo`, ir a **Ventas → Productos** y localizar un producto de cada tipo.
-Repasar también precio de venta, coste, categoría, unidad de medida e impuestos
-de ventas y de compras.
+La captura `02-producto-bien-rastreable.png` muestra el resumen de Inventario,
+y es idéntica a `03-producto-bien-sin-rastrear.png`; no acredita dos productos
+distintos. Las capturas restantes muestran una lista filtrada por servicios y
+un producto de tipo combinación, no fichas de cada tipo con sus impuestos.
 
-| Tipo de producto | Qué es | Ejemplo | Inventario |
-|---|---|---|---|
-| **Bienes con Rastrear inventario** | Producto físico del que se controlan existencias (antes, almacenable) | Una silla de oficina | Entradas, salidas y stock por almacén |
-| **Bienes sin Rastrear inventario** | Producto físico del que no se lleva stock (antes, consumible) | Folios, tornillería | Se entrega, pero no se cuenta |
-| **Servicio** | Algo que se presta, no se entrega | Horas de instalación, mantenimiento | Nunca |
-| **Combinación** | Conjunto de productos que se vende junto | Menú, pack de bienvenida | El de cada componente |
+| Tipo de producto | Descripción | Seguimiento |
+|---|---|---|
+| **Bienes con Rastrear inventario** | Producto físico | Se controlan existencias |
+| **Bienes sin Rastrear inventario** | Producto físico | No se controlan existencias |
+| **Servicio** | Servicio prestado, no entregado como producto físico | No aplica |
+| **Combinación** | Conjunto de productos que se vende junto | Depende de sus componentes |
 
 > En Odoo 17 y anteriores había tres tipos (almacenable, consumible y servicio).
 > Desde Odoo 18 los tipos son **Bienes**, **Servicio** y **Combinación**; lo que
 > distingue a los bienes es la casilla **Rastrear inventario**.
 
-![Producto de tipo Bienes con rastrear inventario](./screenshots/02-producto-bien-rastreable.png)
+![Resumen de Inventario](./screenshots/02-producto-bien-rastreable.png)
 
-![Producto de tipo Bienes sin rastrear inventario](./screenshots/03-producto-bien-sin-rastrear.png)
+![Lista de productos filtrada por servicios](./screenshots/04-producto-servicio.png)
 
-![Producto de tipo Servicio](./screenshots/04-producto-servicio.png)
+![Producto de tipo Combinación en la lista de productos](./screenshots/05-producto-combinacion.png)
 
-![Producto de tipo Combinación](./screenshots/05-producto-combinacion.png)
-
-> Capturas necesarias: la ficha de un producto de cada tipo, con sus impuestos
-> de ventas y compras visibles.
+No hay capturas de las fichas de los dos tipos de Bienes ni de los impuestos de
+ventas y compras.
 
 ## 3. Ejercicio 2 · Recorrido: del cliente a la factura pagada
 
-Recorrido completo con los datos de demostración. Guardar una captura de cada paso.
+Solo hay evidencia disponible para el paso de contactos. El resto de los pasos
+no se puede dar por completado a partir de los ficheros del repositorio.
 
 ### Paso 1 · Contactos
 
-Abrir un contacto de **empresa** y uno de **persona**. Fíjate en la diferencia
-entre Compañía e Individuo y en cómo las personas quedan vinculadas a su empresa.
+La captura disponible muestra un contacto de persona asociado a una compañía.
 
-![Contactos: empresa e individuo](./screenshots/06-ej2-paso1-contactos.png)
+![Contacto de persona asociado a una compañía](./screenshots/Captura%20desde%202026-11-10%2011-07-42.png)
 
 ### Paso 2 · Cliente nuevo
 
-Crear un cliente nuevo con su CIF y dirección, y asignarle una etiqueta.
-
-![Cliente nuevo con etiqueta](./screenshots/07-ej2-paso2-nuevo-cliente.png)
+No hay captura disponible en el repositorio.
 
 ### Paso 3 · Productos nuevos
 
-Crear un servicio **Hora de soporte** a 40 € con Impuesto de ventas del 21 % y un
-bien **Libro técnico** a 25 € con el 4 %. Marcar **Ventas** en los dos.
-
-![Productos nuevos: servicio y bien](./screenshots/08-ej2-paso3-productos.png)
+No hay captura disponible en el repositorio.
 
 ### Paso 4 · Presupuesto
 
-En **Ventas**, crear un presupuesto para ese cliente con esos dos productos,
-enviarlo (sin correo real) y confirmarlo. Pasa a ser **pedido de venta**.
-
-![Presupuesto confirmado / pedido de venta](./screenshots/09-ej2-paso4-presupuesto.png)
+No hay captura disponible en el repositorio.
 
 ### Paso 5 · Factura
 
-Desde el pedido, crear la factura y comprobar que cada línea lleva su IVA y que
-el total cuadra. Confirmarla, imprimirla en PDF y registrar el pago. Comprobar la
-etiqueta **Pagado**.
-
-![Factura con el IVA de cada línea y pagada](./screenshots/10-ej2-paso5-factura.png)
+No hay captura disponible en el repositorio.
 
 ### Paso 6 · Factura de proveedor
 
-Localizar una factura de proveedor de los datos de demostración y comparar sus
-campos con una de cliente.
-
-![Factura de proveedor](./screenshots/11-ej2-paso6-factura-proveedor.png)
+No hay captura disponible en el repositorio.
 
 ### Paso 7 · Chatter
 
-En la parte derecha o inferior de cualquier registro está el historial de
-cambios, mensajes y actividades. Programar una actividad (una llamada) para el
-cliente.
-
-![Chatter con actividad programada](./screenshots/12-ej2-paso7-chatter.png)
+No hay captura disponible en el repositorio.
 
 ## 4. Ejercicio 3 · Búsqueda guardada
 
-En **Facturación → Clientes → Facturas**, mostrar solo las facturas
-**publicadas**, agrupadas por **cliente**, en vista **lista**, y guardarlo como
-**favorito**.
-
-![Facturas publicadas agrupadas por cliente y favorito guardado](./screenshots/13-ej3-facturas-favoritas.png)
-
-> Captura necesaria: la lista de facturas publicadas agrupadas por cliente y el
-> favorito guardado.
+No hay captura disponible de la búsqueda guardada.
 
 ## 5. Ejercicio 4 · Modo desarrollador
 
@@ -241,14 +188,10 @@ Hay dos vías de activación:
 Se sabe que está activo porque aparece el icono del escarabajo en la barra
 superior.
 
-![Activación del modo desarrollador desde Ajustes](./screenshots/14-ej4-debug-ajustes.png)
-
-![Activación del modo desarrollador con ?debug=1](./screenshots/15-ej4-debug-url.png)
-
 Con el modo desarrollador activo, al pasar el ratón sobre un campo se ve su
 **nombre técnico** y el **modelo** al que pertenece.
 
-| Campo del formulario | Nombre técnico | Modelo |
+| Campo | Nombre técnico | Modelo |
 |---|---|---|
 | CIF del contacto | `vat` | `res.partner` |
 | Nombre del contacto | `name` | `res.partner` |
@@ -256,28 +199,20 @@ Con el modo desarrollador activo, al pasar el ratón sobre un campo se ve su
 | Fecha de la factura | `invoice_date` | `account.move` |
 | Importe total de la factura | `amount_total` | `account.move` |
 
-![Nombres técnicos de campos con el modo desarrollador](./screenshots/16-ej4-nombres-tecnicos.png)
-
-> Capturas necesarias: las dos vías de activación y la tabla con los nombres
-> técnicos (la tabla anterior es un ejemplo; rellénala con los campos que
-> hayas inspeccionado).
+No hay capturas disponibles de la activación del modo desarrollador ni de la
+inspección de los nombres técnicos.
 
 ## 6. Incidencias
 
-Tabla con fecha, síntoma, causa y solución de cada problema encontrado.
+No hay incidencias documentadas en los ficheros disponibles; esto no permite
+confirmar si se produjo alguna durante el recorrido.
 
 | Fecha | Síntoma | Causa | Solución |
 |---|---|---|---|
-| | | | |
-
-> Si no ha habido ninguna incidencia, escribir: “No se han producido
-> incidencias”.
+| Sin datos | No hay incidencias registradas | No consta | No consta |
 
 ## 7. Declaración de uso de IA
 
 | Herramienta | Para qué la usé | Qué cambié o revisé de su salida |
 |---|---|---|
-| OpenCode (asistente IA, modelo LongCat 2.5 Free) | Preparar los ficheros de despliegue (`docker-compose.yml`, `.env.example`, `config/odoo.conf`), redactar este README y resolver dudas sobre la tarea. | Revisé los valores generados (contraseñas y nombres de bases de datos) y completé el README con mis capturas y los datos reales de mi recorrido. |
-
-> Ajusta esta declaración a lo que realmente hayas hecho: herramienta usada,
-> para qué y qué modificaste de su salida.
+| GitHub Copilot | Corregir el README y añadir `.gitignore`, `.env.example` y el marcador de `addons/`. | Se revisaron las capturas disponibles; no se inventaron evidencias para los pasos sin capturas. |
