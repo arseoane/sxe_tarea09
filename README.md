@@ -204,12 +204,7 @@ inspección de los nombres técnicos.
 
 ## 6. Incidencias
 
-No hay incidencias documentadas en los ficheros disponibles; esto no permite
-confirmar si se produjo alguna durante el recorrido.
-
-| Fecha | Síntoma | Causa | Solución |
-|---|---|---|---|
-| Sin datos | No hay incidencias registradas | No consta | No consta |
+No hay incidencias registradas.
 
 ## 7. Declaración de uso de IA
 
