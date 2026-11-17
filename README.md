@@ -148,11 +148,13 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ### Paso 2 · Cliente nuevo
 
-No hay captura disponible en el repositorio.
+<img width="1230" height="941" alt="image" src="https://github.com/user-attachments/assets/c054dd29-1d42-4c33-b517-0de1e2e79c2c" />
+
 
 ### Paso 3 · Productos nuevos
 
-No hay captura disponible en el repositorio.
+<img width="1920" height="724" alt="image" src="https://github.com/user-attachments/assets/b34754a5-d0a2-4a97-b9ce-ebe5da431480" />
+
 
 ### Paso 4 · Presupuesto
 
