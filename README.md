@@ -171,7 +171,8 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ### Paso 7 · Chatter
 
-No hay captura disponible en el repositorio.
+<img width="718" height="860" alt="image" src="https://github.com/user-attachments/assets/d6811bef-1f9a-4374-9a78-cf25024717f7" />
+
 
 ## 4. Ejercicio 3 · Búsqueda guardada
 
