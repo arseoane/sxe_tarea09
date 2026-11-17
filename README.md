@@ -126,14 +126,10 @@ un producto de tipo combinación, no fichas de cada tipo con sus impuestos.
 > Desde Odoo 18 los tipos son **Bienes**, **Servicio** y **Combinación**; lo que
 > distingue a los bienes es la casilla **Rastrear inventario**.
 
-![Resumen de Inventario](./screenshots/02-producto-bien-rastreable.png)
-
-![Lista de productos filtrada por servicios](./screenshots/04-producto-servicio.png)
-
-![Producto de tipo Combinación en la lista de productos](./screenshots/05-producto-combinacion.png)
-
-No hay capturas de las fichas de los dos tipos de Bienes ni de los impuestos de
-ventas y compras.
+* Bienes con Rastrear inventario: ![](https://github.com/arseoane/sxe_tarea09/blob/main/screenshots/02-producto-bien-rastreable.png?raw=true)
+* Bienes sin Rastrear inventario: ![](https://github.com/arseoane/sxe_tarea09/blob/main/screenshots/03-producto-bien-sin-rastrear.png?raw=true)
+* Servicio: ![](https://github.com/arseoane/sxe_tarea09/blob/main/screenshots/04-producto-servicio.png?raw=true)
+* Combinación: ![](https://github.com/arseoane/sxe_tarea09/blob/main/screenshots/05-producto-combinacion.png?raw=true)
 
 ## 3. Ejercicio 2 · Recorrido: del cliente a la factura pagada
 
@@ -144,7 +140,7 @@ no se puede dar por completado a partir de los ficheros del repositorio.
 
 La captura disponible muestra un contacto de persona asociado a una compañía.
 
-![Contacto de persona asociado a una compañía](./screenshots/Captura%20desde%202026-11-10%2011-07-42.png)
+![Contacto de persona asociado a una compañía](./screenshots/06-ej2-paso1-contactos.png)
 
 ### Paso 2 · Cliente nuevo
 
