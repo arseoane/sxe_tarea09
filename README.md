@@ -174,7 +174,8 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ## 4. Ejercicio 3 · Búsqueda guardada
 
-<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/9a376e69-f5ac-4276-9352-aa80fd0c5251" />
+<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/5c4f5bb1-97bf-4b20-b1e9-8cd8ca2f0650" />
+
 
 
 ## 5. Ejercicio 4 · Modo desarrollador
