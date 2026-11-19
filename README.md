@@ -144,30 +144,32 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ### Paso 2 · Cliente nuevo
 
-<img width="1230" height="941" alt="image" src="https://github.com/user-attachments/assets/c054dd29-1d42-4c33-b517-0de1e2e79c2c" />
-
+<img width="1600" height="763" alt="image" src="https://github.com/user-attachments/assets/1b5cebd9-e6da-4106-b778-371f407ea48e" />
 
 ### Paso 3 · Productos nuevos
 
-<img width="1366" height="679" alt="image" src="https://github.com/user-attachments/assets/3f62b1ae-7284-40a2-bf2d-68b9d1ecb6ee" />
-
+<img width="1600" height="763" alt="image" src="https://github.com/user-attachments/assets/974f4c4f-c636-4587-9c87-62520b180c2e" />
 
 ### Paso 4 · Presupuesto
 
-<img width="849" height="506" alt="image" src="https://github.com/user-attachments/assets/76bc4db6-f9bb-4af6-8422-f688ccb6266f" />
+<img width="1600" height="763" alt="image" src="https://github.com/user-attachments/assets/f4eb6fd6-e93f-4e75-bacc-99dc3e44fd59" />
+
 
 
 ### Paso 5 · Factura
 
-<img width="1344" height="530" alt="image" src="https://github.com/user-attachments/assets/297e3b80-2970-49a5-ae25-789d0aab79b1" />
+<img width="1600" height="763" alt="image" src="https://github.com/user-attachments/assets/45d99048-1504-4463-b009-12bf46c63081" />
+
 
 ### Paso 6 · Factura de proveedor
 
-<img width="998" height="647" alt="image" src="https://github.com/user-attachments/assets/203c6f71-4a05-4cbb-8f4a-e24a35c9aaef" />
+<img width="1600" height="763" alt="image" src="https://github.com/user-attachments/assets/8f13844c-4201-4c6a-8cfb-a05935ae3680" />
+
 
 ### Paso 7 · Chatter
 
-<img width="718" height="860" alt="image" src="https://github.com/user-attachments/assets/d6811bef-1f9a-4374-9a78-cf25024717f7" />
+<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/8e09cbb3-5cfe-4cdb-8f39-44e4ec1ca79e" />
+
 
 
 ## 4. Ejercicio 3 · Búsqueda guardada
