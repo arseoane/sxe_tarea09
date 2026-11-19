@@ -174,10 +174,13 @@ La captura disponible muestra un contacto de persona asociado a una compañía.
 
 ## 4. Ejercicio 3 · Búsqueda guardada
 
-<img width="675" height="769" alt="image" src="https://github.com/user-attachments/assets/2452128f-5d63-4239-ba42-6e052c4d97ed" />
+<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/9a376e69-f5ac-4276-9352-aa80fd0c5251" />
 
 
 ## 5. Ejercicio 4 · Modo desarrollador
+
+<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/a11af024-ece9-4f79-94a7-b8a39f7d90da" />
+
 
 El modo desarrollador muestra información técnica que un usuario normal no ve.
 Hay dos vías de activación:
