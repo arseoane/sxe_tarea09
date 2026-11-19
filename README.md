@@ -133,8 +133,8 @@ un producto de tipo combinación, no fichas de cada tipo con sus impuestos.
 
 ## 3. Ejercicio 2 · Recorrido: del cliente a la factura pagada
 
-Solo hay evidencia disponible para el paso de contactos. El resto de los pasos
-no se puede dar por completado a partir de los ficheros del repositorio.
+<img width="1600" height="819" alt="image" src="https://github.com/user-attachments/assets/166b6e42-b52c-441f-b116-805d0336256a" />
+
 
 ### Paso 1 · Contactos
 
